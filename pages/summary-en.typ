@@ -5,6 +5,7 @@
   doctype: "bachelor",
   title: "Summary",
   twoside: false,
+  ziti: (:),
   body,
 ) = {
   pagebreak(
@@ -24,6 +25,7 @@
   show: no-numbering-page-header.with(
     doctype: doctype,
     bachelor-sum: true,
+    ziti: ziti,
   )
   show: no-numbering-first-heading
 

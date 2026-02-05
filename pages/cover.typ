@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/distr.typ": distr
 #import "../utils/datetime-display.typ": datetime-display
 
@@ -9,6 +9,7 @@
   anonymous: false,
   info: (:),
   key-to-zh: (:),
+  ziti: (:),
 ) = {
   align(
     center,

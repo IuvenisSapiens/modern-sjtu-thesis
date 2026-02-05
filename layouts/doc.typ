@@ -1,4 +1,3 @@
-#import "../utils/style.typ": ziti
 #import "@preview/cuti:0.4.0": show-cn-fakebold
 #import "@preview/i-figured:0.2.4"
 #import "@preview/itemize:0.2.0" as el
@@ -12,7 +11,7 @@
   print: false,
   // 其他参数
   fallback: false, // 字体缺失时使用 fallback，不显示豆腐块
-  fonts: (:),
+  ziti: (:),
   it,
 ) = {
   set page(margin: if doctype == "bachelor" {

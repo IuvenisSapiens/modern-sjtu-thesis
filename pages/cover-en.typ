@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/datetime-display.typ": datetime-en-display, datetime-en-display-without-day
 
 #let cover-en-page(
@@ -7,6 +7,7 @@
   twoside: false,
   anonymous: false,
   info: (:),
+  ziti: (:),
 ) = {
   let cover-en-title = if doctype == "doctor" {
     "A Dissertation Submitted to

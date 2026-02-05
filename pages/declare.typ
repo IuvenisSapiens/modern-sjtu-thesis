@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/uline.typ": center-box, uline
 #import "../utils/checkbox.typ": checkbox
 
@@ -13,6 +13,7 @@
   authorization-author-sign: none,
   supervisor-sign: none,
   info: (:),
+  ziti: (:),
 ) = {
   if anonymous {
     return

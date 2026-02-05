@@ -7,11 +7,12 @@
 #let appendix(
   doctype: "master",
   twoside: false,
+  ziti: (:),
   body,
 ) = {
-  show: appendix-page-header.with(doctype: doctype, twoside: twoside)
-  show: appendix-first-heading.with(doctype: doctype, twoside: twoside)
-  show: other-heading.with(appendix: true)
+  show: appendix-page-header.with(doctype: doctype, twoside: twoside, ziti: ziti)
+  show: appendix-first-heading.with(doctype: doctype, twoside: twoside, ziti: ziti)
+  show: other-heading.with(appendix: true, ziti: ziti)
 
   show heading: i-figured.reset-counters.with(extra-kinds: ("image", "image-en", "table", "table-en", "algorithm"))
   show figure: i-figured.show-figure.with(extra-prefixes: (image: "img:", algorithm: "algo:"), numbering: if doctype

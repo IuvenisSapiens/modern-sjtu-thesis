@@ -18,7 +18,7 @@
   xiaoqi: 5pt,
 )
 
-#let ziti = (
+#let preset-ziti = (
   // 宋体，属于「有衬线字体」，一般可以等同于英文中的 Serif Font
   // 这一行分别是「新罗马体（有衬线英文字体）」、「宋体（MacOS）」、「宋体（Windows）」、「华文宋体」
   songti: ((name: "Times New Roman", covers: "latin-in-cjk"), "Songti SC", "SimSun", "STSongti", "Noto Serif CJK SC"),
@@ -32,7 +32,6 @@
   // 这一行分别是「新罗马体（有衬线英文字体）」、「仿宋（MacOS）」、「仿宋（Windows）」、「华文仿宋」、「方正仿宋」
   fangsong: (
     (name: "Times New Roman", covers: "latin-in-cjk"),
-    "FangSong_GB2312",
     "FangSong SC",
     "FangSong",
     "STFangSong",

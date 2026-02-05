@@ -2,7 +2,7 @@
 #import "@preview/theorion:0.4.1": *
 #import "../utils/theoriom.typ": *
 #import "@preview/equate:0.3.2": *
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/header.typ": main-text-page-header
 #import "../utils/heading.typ": main-text-first-heading, other-heading
 #import "../utils/figurex.typ": preset
@@ -12,6 +12,7 @@
   twoside: false,
   enable-avoid-orphan-headings: false,
   auto-section-pagebreak-space: 15%,
+  ziti: (:),
   body,
 ) = {
   set page(numbering: "1")
@@ -20,14 +21,17 @@
   show: main-text-page-header.with(
     doctype: doctype,
     twoside: twoside,
+    ziti: ziti,
   )
   show: main-text-first-heading.with(
     doctype: doctype,
     twoside: twoside,
+    ziti: ziti,
   )
   show: other-heading.with(
     enable-avoid-orphan-headings: enable-avoid-orphan-headings,
     auto-section-pagebreak-space: auto-section-pagebreak-space,
+    ziti: ziti,
   )
 
   show: preset

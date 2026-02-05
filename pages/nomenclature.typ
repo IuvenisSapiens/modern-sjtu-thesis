@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 
 #let nomenclature-page(
   twoside: false,
@@ -7,6 +7,7 @@
   column-gutter: 2em,
   info: (:),
   title: "符号对照表",
+  ziti: (:),
   body,
 ) = {
   set text(font: ziti.songti, size: zihao.xiaosi)

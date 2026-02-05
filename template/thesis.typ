@@ -30,6 +30,7 @@
   twoside: false, // 双面模式
   print: false, // 打印模式, 设置为 true 时，根据奇偶页调整页边距
   anonymous: false, // 盲审模式
+  // font-set: "mac", // 字体设置: "mac" | "windows" | "webapp", 根据系统设定字体集，可消除未知字体警告
   info: (
     student-id: "520XXXXXXXX",
     name: "张三",
@@ -168,11 +169,11 @@
 公式应另起一行居中排版。公式后应注明编号，按章顺序编排，编号右端对齐，如@equation 所示。
 
 $
-  ee^(ii ppi) + 1 = 0
+  ee^(ii ppi) + 1 = 0,
 $ <equation>
 
 $
-  (dif^2 u) / (dif t^2) = integral f(x) dif x
+  (dif^2 u) / (dif t^2) = integral f(x) dif x.
 $
 
 公式末尾是需要添加标点符号的，至于用逗号还是句号，取决于公式下面一句是接着公式说的，还是另起一句。

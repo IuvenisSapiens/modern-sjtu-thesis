@@ -9,6 +9,7 @@
   bibfunc: none,
   style: "shanghai-jiao-tong-university.csl",
   full: false,
+  ziti: (:),
 ) = {
   pagebreak(
     weak: true,
@@ -20,8 +21,9 @@
   show: no-numbering-page-header.with(
     doctype: doctype,
     bachelor-bib: if doctype == "bachelor" { true } else { false },
+    ziti: ziti,
   )
-  show: no-numbering-first-heading
+  show: no-numbering-first-heading.with(ziti: ziti)
 
   show bibliography: set text(size: zihao.wuhao)
   show bibliography: set par(leading: 1em, spacing: 1em)

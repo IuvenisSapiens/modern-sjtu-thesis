@@ -1,4 +1,4 @@
-#import "utils/style.typ": zihao, ziti
+#import "utils/style.typ": preset-ziti, zihao
 #import "utils/word-counter.typ": *
 #import "utils/figurex.typ": *
 #import "layouts/doc.typ": doc
@@ -25,6 +25,8 @@
   twoside: false,
   anonymous: false,
   print: false,
+  font-set: none,
+  fonts: preset-ziti,
   info: (:),
   key-to-zh: (:),
 ) = {
@@ -46,6 +48,37 @@
       + info
   )
   key-to-zh = key-to-zh
+  fonts = {
+    if font-set == "webapp" {
+      (
+        songti: ((name: "TeX Gyre Termes", covers: "latin-in-cjk"), "Noto Serif CJK SC"),
+        heiti: ((name: "TeX Gyre Termes", covers: "latin-in-cjk"), "Noto Sans CJK SC"),
+        kaiti: ((name: "TeX Gyre Termes", covers: "latin-in-cjk"), "TW-MOE-Std-Kai"),
+        dengkuan: ("Fira Mono", (name: "Noto Sans CJK SC", covers: regex("\p{script=Han}"))),
+        math: ("New Computer Modern Math", (name: "Noto Serif CJK SC", covers: regex("\p{script=Han}"))),
+      )
+    } else if font-set == "mac" {
+      (
+        songti: ((name: "Times New Roman", covers: "latin-in-cjk"), "Songti SC"),
+        heiti: ((name: "Times New Roman", covers: "latin-in-cjk"), "Heiti SC"),
+        kaiti: ((name: "Times New Roman", covers: "latin-in-cjk"), "Kaiti SC"),
+        fangsong: ((name: "Times New Roman", covers: "latin-in-cjk"), "FangSong SC"),
+        dengkuan: ("Menlo", (name: "Heiti SC", covers: regex("\p{script=Han}"))),
+        math: ("STIX Two Math", (name: "Songti SC", covers: regex("\p{script=Han}"))),
+      )
+    } else if font-set == "windows" {
+      (
+        songti: ((name: "Times New Roman", covers: "latin-in-cjk"), "SimSun"),
+        heiti: ((name: "Times New Roman", covers: "latin-in-cjk"), "SimHei"),
+        kaiti: ((name: "Times New Roman", covers: "latin-in-cjk"), "KaiTi"),
+        fangsong: ((name: "Times New Roman", covers: "latin-in-cjk"), "FangSong"),
+        dengkuan: ("Cascadia Code", (name: "SimHei", covers: regex("\p{script=Han}"))),
+        math: ("Cambria Math", (name: "SimSun", covers: regex("\p{script=Han}"))),
+      )
+    } else {
+      fonts
+    }
+  }
 
   (
     doctype: doctype,
@@ -62,6 +95,7 @@
         twoside: twoside,
         print: print,
         info: info + args.named().at("info", default: (:)),
+        ziti: fonts,
       )
     },
     preface: (..args) => {
@@ -70,6 +104,7 @@
         doctype: doctype,
         twoside: twoside,
         print: print,
+        ziti: fonts,
       )
     },
     mainmatter: (..args) => {
@@ -77,6 +112,7 @@
         ..args,
         doctype: doctype,
         twoside: twoside,
+        ziti: fonts,
       )
     },
     appendix: (..args) => {
@@ -84,6 +120,7 @@
         ..args,
         doctype: doctype,
         twoside: twoside,
+        ziti: fonts,
       )
     },
     cover: (..args) => {
@@ -95,6 +132,7 @@
           info: info + args.named().at("info", default: (:)),
           date: date,
           key-to-zh: key-to-zh,
+          ziti: fonts,
         )
       } else {
         cover-page(
@@ -105,6 +143,7 @@
           info: info + args.named().at("info", default: (:)),
           date: date,
           key-to-zh: key-to-zh,
+          ziti: fonts,
         )
       }
     },
@@ -116,6 +155,7 @@
         anonymous: anonymous,
         info: info + args.named().at("info", default: (:)),
         date: date,
+        ziti: fonts,
       )
     },
     declare: (..args) => {
@@ -125,6 +165,7 @@
         twoside: twoside,
         anonymous: anonymous,
         info: info + args.named().at("info", default: (:)),
+        ziti: fonts,
       )
     },
     abstract: (..args) => {
@@ -132,6 +173,7 @@
         ..args,
         twoside: twoside,
         info: info + args.named().at("info", default: (:)),
+        ziti: fonts,
       )
     },
     abstract-en: (..args) => {
@@ -140,6 +182,7 @@
         doctype: doctype,
         twoside: twoside,
         info: info + args.named().at("info", default: (:)),
+        ziti: fonts,
       )
     },
     outline: (..args) => {
@@ -171,6 +214,7 @@
       nomenclature-page(
         ..args,
         twoside: twoside,
+        ziti: fonts,
       )
     },
     bib: (..args) => {
@@ -178,6 +222,7 @@
         ..args,
         doctype: doctype,
         twoside: twoside,
+        ziti: fonts,
       )
     },
     acknowledgement: (..args) => {
@@ -186,6 +231,7 @@
         doctype: doctype,
         twoside: twoside,
         anonymous: anonymous,
+        ziti: fonts,
       )
     },
     achievement: (..args) => {
@@ -193,6 +239,7 @@
         ..args,
         doctype: doctype,
         twoside: twoside,
+        ziti: fonts,
       )
     },
     summary-en: (..args) => {
@@ -201,6 +248,7 @@
         title: info.title-en,
         doctype: doctype,
         twoside: twoside,
+        ziti: fonts,
       )
     },
   )

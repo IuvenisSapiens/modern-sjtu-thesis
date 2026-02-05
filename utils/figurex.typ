@@ -9,7 +9,7 @@
  */
 
 #import "@preview/i-figured:0.2.4"
-#import "style.typ": zihao, ziti
+#import "style.typ": zihao
 #let preset(
   body,
 ) = {

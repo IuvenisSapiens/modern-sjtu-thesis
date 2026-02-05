@@ -1,10 +1,11 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 
 #let abstract-en-page(
   keywords: (),
   doctype: "master",
   twoside: false,
   info: (:),
+  ziti: (:),
   body,
 ) = {
   set text(font: ziti.songti, size: zihao.xiaosi)

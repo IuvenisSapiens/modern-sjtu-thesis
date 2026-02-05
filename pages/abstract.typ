@@ -1,9 +1,10 @@
-#import "../utils/style.typ": ziti, zihao
+#import "../utils/style.typ": zihao
 
 #let abstract-page(
   keywords: (),
   twoside: false,
   info: (:),
+  ziti: (:),
   body,
 ) = {
   set text(font: ziti.songti, size: zihao.xiaosi)
@@ -16,7 +17,7 @@
   linebreak()
   linebreak()
 
-  [*关键词：*#(("",)+ keywords.intersperse("，")).sum()]
+  [*关键词：*#(("",) + keywords.intersperse("，")).sum()]
 
   pagebreak(
     weak: true,

@@ -1,4 +1,4 @@
-#import "style.typ": zihao, ziti
+#import "style.typ": zihao
 
 #let no-numbering-page-header(
   doctype: "master",
@@ -9,6 +9,7 @@
   bachelor-ackn: false,
   bachelor-bib: false,
   bachelor-sum: false,
+  ziti: (:),
   it,
 ) = {
   set page(header: context {
@@ -103,6 +104,7 @@
 #let main-text-page-header(
   doctype: "master",
   twoside: false,
+  ziti: (:),
   it,
 ) = {
   set page(header: context {
@@ -197,6 +199,7 @@
 #let appendix-page-header(
   doctype: "master",
   twoside: false,
+  ziti: (:),
   it,
 ) = {
   set page(header: context {

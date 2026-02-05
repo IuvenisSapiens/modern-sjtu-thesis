@@ -1,7 +1,10 @@
-#import "style.typ": zihao, ziti
+#import "style.typ": zihao
 #import "@preview/numbly:0.1.0": numbly
 
-#let no-numbering-first-heading(body) = {
+#let no-numbering-first-heading(
+  ziti: (:),
+  body,
+) = {
   show heading.where(level: 1): set align(center)
   show heading: set par(justify: false)
   set heading(numbering: none, supplement: auto, bookmarked: true)
@@ -29,6 +32,7 @@
 #let main-text-first-heading(
   doctype: "master",
   twoside: false,
+  ziti: (:),
   body,
 ) = {
   show heading.where(level: 1): set align(center)
@@ -73,6 +77,7 @@
 #let appendix-first-heading(
   doctype: "master",
   twoside: false,
+  ziti: (:),
   body,
 ) = {
   show heading.where(level: 1): set align(center)
@@ -116,6 +121,7 @@
     )
 
     v(if doctype == "bachelor" { 30pt } else { 24pt })
+
     if doctype == "bachelor" {
       it.body + "（" + counter(heading).display() + "）"
     } else {
@@ -130,6 +136,7 @@
   enable-avoid-orphan-headings: false,
   auto-section-pagebreak-space: 15%,
   appendix: false,
+  ziti: (:),
   body,
 ) = {
   show heading.where(level: 2): set heading(outlined: if appendix { false } else { true })

@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/header.typ": no-numbering-page-header
 #import "../utils/heading.typ": no-numbering-first-heading
 
@@ -7,13 +7,15 @@
   twoside: false,
   papers: (),
   patents: (),
+  ziti: (:),
 ) = {
   show: no-numbering-page-header.with(
     doctype: doctype,
     twoside: twoside,
     bachelor-achi: if doctype == "bachelor" { true } else { false },
+    ziti: ziti,
   )
-  show: no-numbering-first-heading
+  show: no-numbering-first-heading.with(ziti: ziti)
 
   set list(indent: 0em)
 

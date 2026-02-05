@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/header.typ": no-numbering-page-header
 #import "../utils/heading.typ": no-numbering-first-heading
 
@@ -6,6 +6,7 @@
   doctype: "master",
   twoside: false,
   print: false,
+  ziti: (:),
   it,
 ) = {
   set page(margin: if doctype == "bachelor" {
@@ -29,9 +30,12 @@
     twoside: twoside,
     bachelor-abs: if doctype == "bachelor" { true } else { false },
     bachelor-abs-en: if doctype == "bachelor" { true } else { false },
+    ziti: ziti,
   )
 
-  show: no-numbering-first-heading
+  show: no-numbering-first-heading.with(
+    ziti: ziti,
+  )
 
   set page(header-ascent: 0.5cm)
   set par(justify: true)

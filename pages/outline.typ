@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "@preview/i-figured:0.2.4"
 
 #let outline-page(

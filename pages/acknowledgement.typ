@@ -5,6 +5,7 @@
   doctype: "master",
   twoside: false,
   anonymous: false,
+  ziti: (:),
   body,
 ) = {
   pagebreak(
@@ -22,10 +23,11 @@
     doctype: doctype,
     twoside: twoside,
     bachelor-ackn: if doctype == "bachelor" { true } else { false },
+    ziti: ziti,
   )
-  show: no-numbering-first-heading
+  show: no-numbering-first-heading.with(ziti: ziti)
 
-  heading(level: 1)[致#h(if doctype == "bachelor" {1.5em} else {1em})谢]
+  heading(level: 1)[致#h(if doctype == "bachelor" { 1.5em } else { 1em })谢]
 
   body
 

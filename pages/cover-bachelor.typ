@@ -1,4 +1,4 @@
-#import "../utils/style.typ": zihao, ziti
+#import "../utils/style.typ": zihao
 #import "../utils/distr.typ": distr
 #import "../utils/datetime-display.typ": datetime-display-without-day
 
@@ -8,6 +8,7 @@
   anonymous: false,
   info: (:),
   key-to-zh: (:),
+  ziti: (:),
 ) = {
   v(0.3cm)
 
