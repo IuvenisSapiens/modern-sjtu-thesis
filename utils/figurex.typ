@@ -52,7 +52,7 @@
   label-name: "",
 ) = context {
   set figure.caption(position: top)
-  show table: set text(size: zihao.wuhao, weight: "regular")
+  show table: set text(size: zihao.wuhao)
   show table: set par(leading: 1em)
   let prefix = "tablex-none-label"
   let number = query(figure.where(kind: "table").before(here()))
@@ -216,6 +216,7 @@
   caption: auto,
   caption-en: none,
   columns: auto,
+  placement: none,
   breakable: false,
   label-name: "",
 ) = context {
@@ -224,7 +225,6 @@
   let label-name = if label-name == "" { str("~" + prefix + "-" + str(number.len())) } else { label-name }
   let new-label = label(label-name)
   [
-    #v(0.2em)
     #figure(
       [
         #figure(
@@ -236,11 +236,11 @@
         )#new-label
       ],
       gap: 1em,
+      placement: placement,
       caption: caption-en,
       kind: "image-en",
       supplement: [Figure],
     )
-    #v(0.2em)
   ]
   counter(figure.where(kind: "subimage")).update(0)
   counter(figure.where(kind: "subimage-en")).update(0)
