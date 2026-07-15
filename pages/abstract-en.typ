@@ -27,7 +27,7 @@
   linebreak()
   linebreak()
 
-  [*Key words: *#(("",) + keywords.intersperse(", ")).sum()]
+  par(first-line-indent: 0em, justify: false)[*Key words: *#(("",) + keywords.intersperse(", ")).sum()]
 
   set par(spacing: 16pt)
 

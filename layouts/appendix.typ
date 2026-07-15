@@ -2,7 +2,7 @@
 #import "../utils/heading.typ": appendix-first-heading, other-heading
 #import "@preview/i-figured:0.2.4"
 #import "@preview/numbly:0.1.0": numbly
-#import "@preview/equate:0.3.2": equate
+#import "@preview/equate:0.3.3": equate
 
 #let appendix(
   doctype: "master",

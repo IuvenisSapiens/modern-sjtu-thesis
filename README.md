@@ -45,6 +45,7 @@ Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑。
   - 盲审模式：将个人信息替换成小黑条，并且隐藏致谢页面，论文提交阶段使用
   - 双面模式：加入空白页，便于打印和增加论文页数
   - 打印模式：调整页边距，便于打印
+  - 字体自定义配置
 - **模板**
   - 模板
     - 中文封面
@@ -120,11 +121,9 @@ documentclass(
 
 ## 相关链接
 
-如果对 Typst 论文撰写感兴趣的话，可以从开题报告和中期报告模板开始尝试。
+如果对 Typst 论文撰写感兴趣的话，可以从开题报告，硕士中期报告和博士年度进展报告模板开始尝试。
 
-- [研究生开题报告 Typst 模板](https://github.com/tzhtaylor/typst-sjtu-thesis-proposal)
-
-- [硕士研究生中期报告 Typst 模板](https://github.com/tzhtaylor/typst-sjtu-thesis-midterm)
+- [研究生阶段性报告 Typst 模板](https://github.com/tzhtaylor/modern-sjtu-thesis-milestones)
 
 如果想要类似于 SJTUBeamer 的幻灯片模板，可以使用我开发的
 

@@ -31,7 +31,7 @@
   twoside: false, // 双面模式
   print: false, // 打印模式, 设置为 true 时，根据奇偶页调整页边距
   anonymous: false, // 盲审模式
-  // font-set: "mac", // 字体集设置: "mac" | "windows" | "linux" | "webapp" | "webapp-upload", 根据系统设定字体集，可消除未知字体警告,
+  // font-set: "mac", // 字体集设置: "mac" | "windows" | "linux" | "webapp" | "webapp-upload", 根据系统设定字体集，可消除未知字体警告
   info: (
     student-id: "520XXXXXXXX",
     name: "张三",
@@ -106,7 +106,7 @@
 // #show: mainmatter.with(enable-avoid-orphan-headings: true) // 避免孤行标题，此为实验性功能，会对页面顶部距离造成影响
 #show: word-count-cjk // 正文字数统计
 
-= 绪论 <chp:intro>
+= 绪论 <chap:intro>
 
 == 引言
 
@@ -118,7 +118,7 @@
 
 ==== 四级标题
 
-标题引用：@chp:intro @sec:meaning @app:flowchart
+标题引用：@chap:intro @sec:meaning @app:chart @app:flowchart
 
 == 本文研究主要内容
 
@@ -140,7 +140,7 @@
 
 包 `unify` 提供了更好的数字和单位支持，但与 `siunitx` 相比，只支持了`num`, `unit`, `qty`, `numrange`, `qtyrange` 五个函数：
 
-#import "@preview/unify:0.7.1": *
+#import "@preview/unify:0.8.1": *
 
 - $num("-1.32865+-0.50273e-6")$
 - $num("0.3e45", multiplier: "times")$
@@ -564,7 +564,7 @@ $
   1 / (mu_theta epsilon.alt_z) 1 / r partial / (partial r) (r (partial E_z) / (partial r)) + 1 / (mu_r epsilon.alt_z) 1 / r^2 (partial^2 E_z) / (partial theta^2) + omega^2 E_z = 0.
 $
 
-= 绘图
+= 绘图 <app:chart>
 
 == 流程图 <app:flowchart>
 

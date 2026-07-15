@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.5.0": *
+#import "@preview/theorion:0.6.0": *
 #import "style.typ": zihao
 
 /// A simple render function

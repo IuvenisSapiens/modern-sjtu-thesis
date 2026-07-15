@@ -1,6 +1,7 @@
 #import "../utils/style.typ": zihao
 #import "../utils/header.typ": no-numbering-page-header
 #import "../utils/heading.typ": no-numbering-first-heading
+#import "@preview/quan:0.2.1": *
 
 #let preface(
   doctype: "master",
@@ -24,6 +25,7 @@
   })
 
   show footnote.entry: set text(font: ziti.songti, size: zihao.xiaowu)
+  show: quan-footnote
 
   show: no-numbering-page-header.with(
     doctype: doctype,
@@ -70,7 +72,10 @@
   set math.equation(supplement: [公式])
 
   set text(font: ziti.songti, size: zihao.xiaosi)
-  set par(leading: 16pt, spacing: 16pt)
+  set par(
+    leading: if doctype == "bachelor" { 13.5pt } else { 16pt },
+    spacing: if doctype == "bachelor" { 13.5pt } else { 16pt },
+  )
 
   it
 }

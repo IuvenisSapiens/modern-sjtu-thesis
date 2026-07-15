@@ -10,6 +10,7 @@
 
 #import "@preview/i-figured:0.2.4"
 #import "style.typ": zihao
+
 #let preset(
   body,
 ) = {
@@ -31,7 +32,7 @@
     s.push(text)
     s
   })
-  context super[#notes.get().len()]
+  context super(numbering("a", notes.get().len()))
 }
 
 #let tablex(
@@ -48,6 +49,7 @@
   stroke: none,
   caption: auto,
   caption-en: none,
+  placement: none,
   breakable: true,
   label-name: "",
 ) = context {
@@ -91,12 +93,12 @@
             table.hline(),
           )
           #context for (i, e) in notes.get().enumerate() {
-            set par(spacing: 7pt, first-line-indent: 0em)
+            set par(leading: 7pt, spacing: 7pt, first-line-indent: 0em)
             set align(left)
             if i == 0 {
               v(-1em)
             }
-            text(zihao.xiaowu, weight: "regular")[#super[#(i + 1)] #e]
+            text(zihao.xiaowu, weight: "regular")[#super(numbering("a", i + 1)) #h(.3em) #e]
           }
           #notes.update(())
         ],
@@ -108,6 +110,7 @@
       gap: 1em,
       caption: caption,
       kind: "table",
+      placement: placement,
       supplement: [表],
     )#new-label
   ]

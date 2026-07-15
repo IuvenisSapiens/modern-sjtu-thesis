@@ -15,10 +15,6 @@
   info: (:),
   ziti: (:),
 ) = {
-  if anonymous {
-    return
-  }
-
   align(center, text(
     font: ziti.heiti,
     size: zihao.sanhao,
@@ -45,11 +41,11 @@
 
   align(right, text()[
     学位论文作者签名：#h(6.6em)
-    #if original-statement-sign != none {
+    #if original-statement-sign != none and not anonymous {
       original-statement-sign
     }
 
-    #if date == none [
+    #if date == none or anonymous [
       日期：#center-box(2.5em)[] 年 #center-box(1.25em)[] 月 #center-box(1.25em)[] 日 #h(3.4em)
     ] else [
       日期：#center-box(2.5em)[#date.display("[year]")] 年 #center-box(1.25em)[#date.display("[month padding:none]")] 月 #center-box(1.25em)[#date.display("[day padding:none]")] 日 #h(3.4em)
@@ -172,11 +168,11 @@
   columns(2)[
     #align(right, text()[
       学位论文作者签名：#h(6.6em)
-      #if authorization-author-sign != none {
+      #if authorization-author-sign != none and not anonymous {
         authorization-author-sign
       }
 
-      #if date == none [
+      #if date == none or anonymous [
         日期：#center-box(2.5em)[] 年 #center-box(1.25em)[] 月 #center-box(1.25em)[] 日 #h(3.4em)
       ] else [
         日期：#center-box(2.5em)[#date.display("[year]")] 年 #center-box(1.25em)[#date.display("[month padding:none]")] 月 #center-box(1.25em)[#date.display("[day padding:none]")] 日 #h(3.4em)
@@ -185,11 +181,11 @@
     #colbreak()
     #align(right, text()[
       指导教师签名：#h(8.6em)
-      #if supervisor-sign != none {
+      #if supervisor-sign != none and not anonymous {
         supervisor-sign
       }
 
-      #if date == none [
+      #if date == none or anonymous [
         日期：#center-box(2.5em)[] 年 #center-box(1.25em)[] 月 #center-box(1.25em)[] 日 #h(3.4em)
       ] else [
         日期：#center-box(2.5em)[#date.display("[year]")] 年 #center-box(1.25em)[#date.display("[month padding:none]")] 月 #center-box(1.25em)[#date.display("[day padding:none]")] 日 #h(3.4em)

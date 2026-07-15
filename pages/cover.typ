@@ -34,7 +34,7 @@
       name: "姓名",
       student-id: "学号",
       supervisor: "导师",
-      co-supervisor: "联合导师",
+      co-supervisor: "行业导师",
       school: "院系",
       major: [学科/#h(0.1em)专业],
       degree: "申请学位",

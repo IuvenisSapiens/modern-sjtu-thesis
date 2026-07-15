@@ -1,7 +1,7 @@
 #import "@preview/i-figured:0.2.4"
-#import "@preview/theorion:0.5.0": *
+#import "@preview/theorion:0.6.0": *
 #import "../utils/theoriom.typ": *
-#import "@preview/equate:0.3.2": *
+#import "@preview/equate:0.3.3": *
 #import "../utils/style.typ": zihao
 #import "../utils/header.typ": main-text-page-header
 #import "../utils/heading.typ": main-text-first-heading, other-heading
@@ -98,7 +98,11 @@
           },
       )
     } else if f == heading and it.element.level > 1 and it.element.supplement != [附录] {
-      link(it.target, [第] + it + [节])
+      link(it.target, [第] + h(.3em) + it + [节])
+    } else if f == heading and it.element.level == 1 and it.element.supplement == [附录] {
+      let equation-location = query(it.target).first().location()
+      let heading-index = counter(heading).at(equation-location).at(0)
+      link(it.target, it.element.supplement + numbering("A", heading-index))
     } else {
       it
     }
